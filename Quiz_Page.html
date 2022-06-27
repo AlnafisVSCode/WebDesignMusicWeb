@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quiz</title>
+		<meta charset="UTF-8">
+		<a name="top"></a>
+	<style>
+	#quiz-time-left {
+		position: fixed;
+		top: 5px;
+		left: 2px;
+		width: 100%;
+		color:white;
+		font-size:20px;
+	}
+
+	body {
+		font-family: sans-serif;
+		background: #00001a;
+	}
+
+	#container{
+		width: 700px;
+		margin: 0 auto;
+		background: white;
+		padding: 10px 20px;
+		border-radius: 10px;
+	}
+
+	header{
+		text-align:center;
+		border-bottom:#fff dashed 1px;
+	}
+
+	header h1{
+		margin:0;
+		padding:0;
+	}
+
+	header p{
+		padding:0;
+		margin-top:5px;
+		color:#000;
+	}
+
+	section{
+		min-height:400px;
+	}
+
+	footer{
+		text-align:center;
+	}
+
+	input[type='button']{
+		background:#f06226;
+		border:0;
+		color:#fff;
+		padding:10px 15px;
+		cursor:pointer;
+	}
+
+	#results h3{
+		background:#f06226;
+		padding:10px;
+		margin:10px 0;
+	}
+
+	#results span{
+		color:#000;
+		font-weight:bold;
+	}	
+	.home{
+		background-color: black;
+	}
+	</style>
+	</head>
+	<body>
+		<div style="font-weight: bold" id="quiz-time-left"></div>
+		<div id="container">
+			<header>
+				<input type="image" src="mmbuttons1.png" name="home" class="home">
+				<h1>Major Music Quiz</h1>
+				<p>Try to get all in<strong> 60 seconds </strong></p>
+			</header>
+			<section>
+				<div id="results"></div>
+				<form name="quizForm">
+					<span> <h3 id="q1">1. What was the most popular genre in 2019 ?</h3></span>
+					<label><input type="radio" name="q1" value="a" id="q1a">a. Pop</label><br>
+					<label><input type="radio" name="q1" value="b" id="q1b">b. Hip-Hop</label><br>
+					<label><input type="radio" name="q1" value="c" id="q1c">c. Rock</label><br>
+					<label><input type="radio" name="q1" value="d" id="q1d">d. Country</label><br>
+					
+					<span><h3 id="q2">2. Which genre of music surpassed rock as the most popular ?</h3></span>
+					<label><input type="radio" name="q2" value="a" id="q2a">a. Rap</label><br>
+					<label><input type="radio" name="q2" value="b" id="q2b">b. Electronic</label><br>
+					<label><input type="radio" name="q2" value="c" id="q2c">c. Jazz</label><br>
+					<input type="radio" name="q2" value="d" id="q2d">d. RNB<br>
+
+					<span> <h3 id="q3">3. Who Became the break-through artist of the year ?</h3></span>
+					<label><input type="radio" name="q3" value="a" id="q3a">a. Lil Nas</label><br>
+					<label><input type="radio" name="q3" value="b" id="q3b">b. Drake</label><br>
+					<label><input type="radio" name="q3" value="c" id="q3c">c. Ksi</label><br>
+					<label><input type="radio" name="q3" value="d" id="q3d">d. Billie Eilish</label><br>
+
+					<span> <h3 id="q4">4. What was the number one song of the year 2019</h3></span>
+					<label><input type="radio" name="q4" value="a" id="q4a">a. Bad Guy</label><br>
+					<label><input type="radio" name="q4" value="b" id="q4b">b. Someone You Loved</label><br>
+					<label><input type="radio" name="q4" value="c" id="q4c">c. Old Town Road</label><br>
+					<label><input type="radio" name="q4" value="d" id="q4d">d. I Don't Care</label><br>
+
+					<span> <h3 id="q5">5. Which applications has helped new atists to break-through popularity?</h3></span>
+					<label><input type="radio" name="q5" value="a" id="q5a">a. Facebook</label><br>
+					<label><input type="radio" name="q5" value="b" id="q5b">b. Instagram</label><br>
+					<label><input type="radio" name="q5" value="c" id="q5c">c. Vine</label><br>
+					<label><input type="radio" name="q5" value="d" id="q5d">d. Tik Tok</label><br>
+					
+					<span> <h3 id="q6">6. Who is spotify's most streamed artist?</h3></span>
+					<label><input type="radio" name="q6" value="a" id="q6a">a. Drake</label><br>
+					<label><input type="radio" name="q6" value="b" id="q6b">b. BlueFace</label><br>
+					<label><input type="radio" name="q6" value="c" id="q6c">c. Lil Tecca</label><br>
+					<label><input type="radio" name="q6" value="d" id="q6d">d. Don Toliver</label><br>
+					
+					<span> <h3 id="q7">7. Who invented the moonwalk dance?</h3></span>
+					<label><input type="radio" name="q7" value="a" id="q7a">a. Katy Perry</label><br>
+					<label><input type="radio" name="q7" value="b" id="q7b">b. Bruno Mars</label><br>
+					<label><input type="radio" name="q7" value="c" id="q7c">c. Micheal Jackson</label><br>
+					<label><input type="radio" name="q7" value="d" id="q7d">d. Dj Khaled</label><br>
+
+					<span> <h3 id="q8">8. What is the most streamed song on Youtube?</h3></span>
+					<label><input type="radio" name="q8" value="a" id="q8a">a. Despacito</label><br>
+					<label><input type="radio" name="q8" value="b" id="q8b">b. Baby</label><br>
+					<label><input type="radio" name="q8" value="c" id="q8c">c. Gangnam Style</label><br>
+					<label><input type="radio" name="q8" value="d" id="q8d">d. Lose your self</label><br>
+
+					<span> <h3 id="q9">9. Which artist has the most subsribers on Youtube?</h3></span>
+					<label><input type="radio" name="q9" value="a" id="q9a">a. Justin Bieber</label><br>
+					<label><input type="radio" name="q9" value="b" id="q9b">b. Katy Perry</label><br>
+
+					<span> <h3 id="q10">10. Which country in recent years has risen in the pop genre?</h3></span>
+					<label><input type="radio" name="q10" value="a" id="q10a">a. Japan</label><br>
+					<label><input type="radio" name="q10" value="b" id="q10b">b. Russia</label><br>
+					<label><input type="radio" name="q10" value="c" id="q10c">c. India</label><br>
+					<label><input type="radio" name="q10" value="d" id="q10d">d. South Korea</label><br>
+					
+					<br><br>
+					<input type="button" id="SendAnswer" value="Submit Answers" onclick="submitAnswers()">
+				</form>
+			</section>
+			<footer>
+				<p>@Alnafis Chowdhury | Created on 23/03/2020</p>
+				<a href="pageEditor.html">Page Developer</a>
+			</footer>
+			<a href="#top">Back To Top</a><hr>
+		</div>
+		
+		
+	<script>
+		
+	function getRadioValue( radioArray ) {
+		var i;
+		for ( i = 0; i < radioArray.length; i++ ) {
+			if ( radioArray[ i ].checked ) { 
+				return radioArray[ i ].value;
+			}
+		}
+		return "";
+}
+		
+	
+	var myTimer = window.setTimeout ("checkAnswers()", 60000);
+	var startTime = new Date();  
+	document.getElementById("SendAnswer").addEventListener("click", checkAnswers);
+	
+	function checkAnswers() {
+		var endTime = new Date(); 
+		window.clearTimeout(myTimer);
+		
+		
+		var totalTime = endTime - startTime;
+		var score = 0;
+		var userAnswer1 = getRadioValue(document.getElementsByName("q1"));
+		var userAnswer2 = getRadioValue(document.getElementsByName("q2"));
+		var userAnswer3 = getRadioValue(document.getElementsByName("q3"));
+		var userAnswer4 = getRadioValue(document.getElementsByName("q4"));
+		var userAnswer5 = getRadioValue(document.getElementsByName("q5"));
+		var userAnswer6 = getRadioValue(document.getElementsByName("q6"));
+		var userAnswer7 = getRadioValue(document.getElementsByName("q7"));
+		var userAnswer8 = getRadioValue(document.getElementsByName("q8"));
+		var userAnswer9 = getRadioValue(document.getElementsByName("q9"));
+		var userAnswer10 = getRadioValue(document.getElementsByName("q10"));
+		var total = 10;
+		var score = 0;
+		var wrongQ = [];
+		var count = 0;
+		
+		// Get User Input
+		var q1 = document.forms["quizForm"]["q1"].value;
+		var q2 = document.forms["quizForm"]["q2"].value;
+		var q3 = document.forms["quizForm"]["q3"].value;
+		var q4 = document.forms["quizForm"]["q4"].value;
+		var q5 = document.forms["quizForm"]["q5"].value;
+		var q6 = document.forms["quizForm"]["q6"].value;
+		var q7 = document.forms["quizForm"]["q7"].value;
+		var q8 = document.forms["quizForm"]["q8"].value;
+		var q9 = document.forms["quizForm"]["q9"].value;
+		var q10 = document.forms["quizForm"]["q10"].value;
+		
+		// Validation
+		for(i = 1; i <= total;i++){
+			if(eval('q'+i) == null || eval('q'+i) == ''){
+				wrongQ.push(i);
+				count = count + 1;
+				//return false;
+			}
+		}
+		
+		if (count >= 1){
+			alert('You missed question '+ wrongQ);
+			}
+		
+		// The options that are correct for each question
+		var answers = ["b","a","d","b","d","a","c","a","a","d"];
+		
+		// Checking the Answers
+		for(i = 1; i <= total;i++){
+			if(eval('q'+i) == answers[i - 1]){
+				score = score + 2;
+			} else { 
+				score = score - 1;
+				}
+		}
+		// To Display the Results
+		var results = document.getElementById('results');
+		results.innerHTML = '<h3>You scored <span>'+score+'</span> out of 20</h3>';
+		if (score > 4){document.body.style.backgroundColor = "green"
+		} else 
+			{document.body.style.backgroundColor = "red"}
+		alert('You scored '+score+' out of 20 ');
+		
+		
+		
+		// Show Correct/incorrect answers
+		if (userAnswer1 == "b") {
+			document.getElementById("q1").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q1").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer2 == "a") {
+			document.getElementById("q2").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q2").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer3 == "d") {
+			document.getElementById("q3").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q3").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer4 == "b") {
+			document.getElementById("q4").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q4").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer5 == "d") {
+			document.getElementById("q5").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q5").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer6 == "a") {
+			document.getElementById("q6").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q6").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer7 == "c") {
+			document.getElementById("q7").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q7").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer8 == "a") {
+			document.getElementById("q8").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q8").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer9 == "a") {
+			document.getElementById("q9").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q9").style.backgroundColor = "red";
+		}
+		
+		if (userAnswer10 == "d") {
+			document.getElementById("q10").style.backgroundColor = "blue";
+		} else { 
+				document.getElementById("q10").style.backgroundColor = "red";
+		}
+		alert("Dear Customer you took " + totalTime/1000 + " seconds" );
+		
+};
+	
+	
+	
+	
+	
+	function submitAnswers(){
+	
+		var total = 10;
+		var score = 0;
+		var wrongQ = [];
+		var count = 0;
+		
+		// Get User Input
+		var q1 = document.forms["quizForm"]["q1"].value;
+		var q2 = document.forms["quizForm"]["q2"].value;
+		var q3 = document.forms["quizForm"]["q3"].value;
+		var q4 = document.forms["quizForm"]["q4"].value;
+		var q5 = document.forms["quizForm"]["q5"].value;
+		var q6 = document.forms["quizForm"]["q6"].value;
+		var q7 = document.forms["quizForm"]["q7"].value;
+		var q8 = document.forms["quizForm"]["q8"].value;
+		var q9 = document.forms["quizForm"]["q9"].value;
+		var q10 = document.forms["quizForm"]["q10"].value;
+		
+		// Validation
+		for(i = 1; i <= total;i++){
+			if(eval('q'+i) == null || eval('q'+i) == ''){
+				wrongQ.push(i);
+				count = count + 1;
+				//return false;
+			}
+		}
+		
+		
+		// The options that are correct for each question
+		var answers = ["b","a","d","b","d","a","c","a","a","d"];
+		
+		// Checking the Answers
+		for(i = 1; i <= total;i++){
+			if(eval('q'+i) == answers[i - 1]){
+				score = score + 2;
+			} else { 
+				score = score - 1;
+				}
+		}
+		
+		
+		
+		
+		
+		// To Display the Results
+		var results = document.getElementById('results');
+		results.innerHTML = '<h3>You scored <span>'+score+'</span> out of 20</h3>';
+		
+		if (score > 4){document.body.style.backgroundColor = "green"
+		} else 
+			{document.body.style.backgroundColor = "red"}
+		
+		
+		
+		//return false;
+	}
+	
+	
+
+		
+		
+
+	
+	</script> 
+	</body>	
+	
+</html>
